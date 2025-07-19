@@ -9,7 +9,7 @@ const MyAppointments = () => {
 
     // const { backendUrl, token } = useContext(AppContext)
     const navigate = useNavigate()
-    const {doctors, token,backendUrl} = useContext(AppContext)
+    const {doctors, token,backendUrl, getDoctorsData} = useContext(AppContext)
 
     const [appointments, setAppointments] = useState([])
     const [payment, setPayment] = useState('')
@@ -54,7 +54,8 @@ const MyAppointments = () => {
 
             if (data.success) {
                 toast.success(data.message)
-                getUserAppointments()
+                getUserAppointments();
+                getDoctorsData()
             } else {
                 toast.error(data.message)
             }
@@ -154,7 +155,7 @@ const MyAppointments = () => {
                             <p className=' mt-1 text-green-400'><span className='text-sm text-gray-400 font-medium'>Date & Time:</span> {slotDateFormat(item.slotDate)} |  {item.slotTime}</p>
                         </div>
                         <div></div>
-                        {/* <div className='flex flex-col gap-2 justify-end text-sm text-center'>
+                        <div className='flex flex-col gap-2 justify-end text-sm text-center'>
                             {!item.cancelled && !item.payment && !item.isCompleted && payment !== item._id && <button onClick={() => setPayment(item._id)} className='text-[#696969] sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300'>Pay Online</button>}
                             {!item.cancelled && !item.payment && !item.isCompleted && payment === item._id && <button onClick={() => appointmentStripe(item._id)} className='text-[#696969] sm:min-w-48 py-2 border rounded hover:bg-gray-100 hover:text-white transition-all duration-300 flex items-center justify-center'><img className='max-w-20 max-h-5' src={assets.stripe_logo} alt="" /></button>}
                             {!item.cancelled && !item.payment && !item.isCompleted && payment === item._id && <button onClick={() => appointmentRazorpay(item._id)} className='text-[#696969] sm:min-w-48 py-2 border rounded hover:bg-gray-100 hover:text-white transition-all duration-300 flex items-center justify-center'><img className='max-w-20 max-h-5' src={assets.razorpay_logo} alt="" /></button>}
@@ -164,7 +165,7 @@ const MyAppointments = () => {
 
                             {!item.cancelled && !item.isCompleted && <button onClick={() => cancelAppointment(item._id)} className='text-[#696969] sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300'>Cancel appointment</button>}
                             {item.cancelled && !item.isCompleted && <button className='sm:min-w-48 py-2 border border-red-500 rounded text-red-500'>Appointment cancelled</button>}
-                        </div> */}
+                        </div>
                     </div>
                 ))}
             </div>
