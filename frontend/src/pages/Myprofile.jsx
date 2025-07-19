@@ -10,7 +10,7 @@ const MyProfile = () => {
 
     const [image, setImage] = useState(false)
 
-    // const { token, backendUrl, userData, setUserData, loadUserProfileData } = useContext(AppContext)
+    const { token, backendUrl, userData, setUserData, loadUserProfileData } = useContext(AppContext)
 
     // Function to update user profile data using API
     const updateUserProfileData = async () => {
@@ -45,20 +45,9 @@ const MyProfile = () => {
 
     }
 
-    const [userData, setUserData] = useState({
-        name: "Edward Vincent",
-        image: assets.profile_pic,
-        email: 'richardjameswap@gmail.com',
-        phone: '+1 123 456 7890',
-        address: {
-            line1: "57th Cross, Richmond",
-            line2: "Circle, Church Road, London"
-        },
-        gender: 'Male',
-        dob: '2000-01-20'
-    });
-
-    return userData ? (
+    
+    
+    return userData && (
         <div className='max-w-xl mx-auto flex flex-col gap-4 p-6 mt-10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xs rounded-lg '>
 
             {isEdit
@@ -129,13 +118,13 @@ const MyProfile = () => {
             <div className='mt-10'>
 
                 {isEdit
-                    ? <button onClick={()=>setIsEdit(false)} className='border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all'>Save information</button>
+                    ? <button onClick={updateUserProfileData} className='border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all'>Save information</button>
                     : <button onClick={() => setIsEdit(true)} className='border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all'>Edit</button>
                 }
 
             </div>
         </div>
-    ) : null
+    ) 
 }
 
 export default MyProfile

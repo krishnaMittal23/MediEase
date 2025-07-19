@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+@theme{
+  --color-primary: #5f6FFF;
+  
+}
+::selection {
+  background: #6092be95; /* soft light blue */
+  color: #ffffff;      /* deep blue text */
+}
+
+/* in NavLink when any one is selected then "active" class is applied to it */
+.active hr{
+    @apply block
+}
+
+.bg-dotted {
+  background-color: #0f172a; /* dark slate background */
+  background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

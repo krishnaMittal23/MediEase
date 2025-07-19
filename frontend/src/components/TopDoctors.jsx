@@ -22,7 +22,7 @@ const TopDoctors = () => {
                         className='bg-gray-800 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md'
                         key={index}
                     >
-                        <img className='bg-blue-50' src={item.image} alt={item.name} />
+                        <img className='bg-blue-50 h-[60%] object-cover w-full' src={item.image} alt={item.name} />
                         <div className='p-4'>
                             <div className={`flex items-center gap-2 text-sm ${item.available ? 'text-green-400' : "text-gray-500"}`}>
                                 <p className={`w-2 h-2 rounded-full ${item.available ? 'bg-green-400' : "bg-gray-500"}`}></p>
