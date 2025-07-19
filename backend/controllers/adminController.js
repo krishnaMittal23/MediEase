@@ -4,6 +4,7 @@ import bcrypt from "bcrypt"
 import {v2 as cloudinary} from "cloudinary"
 import jwt from "jsonwebtoken"
 import appointmentModel from './../models/appointmentModel.js';
+import userModel from './../models/userModel.js';
 
 
 
@@ -146,7 +147,7 @@ const adminDashboard = async (req, res) => {
             doctors: doctors.length,
             appointments: appointments.length,
             patients: users.length,
-            latestAppointments: appointments.reverse()
+            latestAppointments: appointments.reverse().slice(0,5)
         }
 
         res.json({ success: true, dashData })
