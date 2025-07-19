@@ -33,7 +33,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <p className='font-semibold text-lg text-primary'>CAREERS AT PRESCRIPTO</p>
+            <p className='font-semibold text-lg text-primary'>CAREERS AT MediEase</p>
             <p className='text-gray-300 mt-1'>Learn more about our teams and job openings.</p>
           </div>
 
