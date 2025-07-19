@@ -6,6 +6,9 @@ import {v2 as cloudinary} from "cloudinary"
 import appointmentModel from "../models/appointmentModel.js";
 import doctorModel from "../models/doctorModel.js";
 
+// Gateway Initialize
+// const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY)
+
 
 // API to register user
 const registerUser = async (req, res) => {
@@ -233,5 +236,8 @@ const listAppointment = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
+
+
+
 
 export {registerUser, loginUser, getProfile,updateProfile, bookAppointment, listAppointment, cancelAppointment}

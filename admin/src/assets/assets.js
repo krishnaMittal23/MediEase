@@ -12,8 +12,10 @@ import appointments_icon from './appointments_icon.svg'
 import earning_icon from './earning_icon.svg'
 import patients_icon from './patients_icon.svg'
 import text from './text.svg'
+import remove_icon from './remove.png'
 
 export const assets = {
+    remove_icon,
     text,
     add_icon,
     admin_logo,
